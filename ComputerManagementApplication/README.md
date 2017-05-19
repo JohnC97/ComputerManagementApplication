@@ -4,4 +4,4 @@ database name = Computer
 
 
 
-mysql -uroot -p Computer << CreateDatabaseAndFillTable.sql
+mysql -uroot -p Computer << FillMeUp.sql
