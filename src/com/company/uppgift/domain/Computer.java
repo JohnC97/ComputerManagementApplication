@@ -1,6 +1,8 @@
 package com.company.uppgift.domain;
 
 public class Computer {
+	
+	// I'M TESTING 
 
 
 		private int id;
@@ -10,7 +12,7 @@ public class Computer {
 		private int computerPrice;
 		private String computerImgSrc;
 		
-//		Krävs av JPA
+//		Krï¿½vs av JPA
 		public Computer(){}
 		
 		public Computer(int id, String computerName, String computerType, String computerSpec, int computerPrice,
