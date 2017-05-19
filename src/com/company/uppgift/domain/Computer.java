@@ -12,7 +12,7 @@ public class Computer {
 		private int computerPrice;
 		private String computerImgSrc;
 		
-//		Kr�vs av JPA
+//		USE ONLY [A-z]
 		public Computer(){}
 		
 		public Computer(int id, String computerName, String computerType, String computerSpec, int computerPrice,
