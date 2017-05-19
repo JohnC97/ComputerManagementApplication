@@ -1,4 +1,4 @@
-CREATE TABLE ComputerList (
+CREATE TABLE Computer (
    ID        INTEGER AUTO_INCREMENT,
    pcName    text,
    pcType    text,
