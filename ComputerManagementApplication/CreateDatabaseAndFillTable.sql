@@ -201,4 +201,4 @@ VALUES
 ('Microsoft Surface Book 13,5', 'QHD+ 2-i-1 datorer', 'GeForce GTX965M, Core i7-6600U, 16GB RAM, 1TB SSD, Windows 10 Pro', '39990', 'https://www.komplett.se/img/p/200/911323.jpg'),
 ('Lenovo P50 15,6', 'Workstation XEON UHD/4K Alla bärbara datorer', 'Quadro M2000M-4GB, XEON-1535M, 16GB RAM, 512GB SSD, Win7 Pro/Win10 Pro', '39990', 'https://www.komplett.se/img/p/200/908571.jpg'),
 ('MSI GT83VR 18.4', 'Full HD matt G-SYNC Bärbar', 'GeForce GTX1080 SLI,Core i7-7820HK,64GB RAM,512GB PCIe SSD,1TB HDD, BD-RE,W10H', '49990', 'https://www.komplett.se/img/p/200/907974.jpg'),
-('Acer Predator 21X 21', 'Curved FHD G-SYNC Bärbar', 'GeForce GTX1080 SLI,Core i7-7820HK,64GB RAM,1 TB PCIe SSD,1TB HDD,W10 Home', '94990', 'https://www.komplett.se/img/p/200/911991.jpg'),
+('Acer Predator 21X 21', 'Curved FHD G-SYNC Bärbar', 'GeForce GTX1080 SLI,Core i7-7820HK,64GB RAM,1 TB PCIe SSD,1TB HDD,W10 Home', '94990', 'https://www.komplett.se/img/p/200/911991.jpg');
