@@ -1,3 +1,4 @@
+/*
 CREATE TABLE Computer (
    ID		   INTEGER(11) AUTO_INCREMENT,
    computerName    varchar(255),
@@ -7,6 +8,10 @@ CREATE TABLE Computer (
    computerImgsrc  varchar(255),
    PRIMARY KEY (ID)
 );
+*/
+
+-- After deploy
+
 INSERT INTO Computer(computerName, computerType, computerSpec, computerPrice, computerImgsrc)
 VALUES
 ('Lenovo Chromebook N22-20 11,6', 'HD Chromebook', 'Celeron N3060, 2GB RAM,16GB SSD, Google Chrome OS', '1990', 'https://www.komplett.se/img/p/200/898888.jpg'),
