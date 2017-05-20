@@ -43,17 +43,36 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 
 	@Override
 	public List<Computer> findByPriceRange(int start, int end) {
-		return null;
+		q = em.createQuery("SELECT computer FROM Computer computer "
+						 + "WHERE computer.ID >= :start "
+						 + "AND computer.ID <= :end");
+		q.setParameter("start", start);
+		q.setParameter("end", end);
+		List<Computer> computers = q.getResultList();
+		return computers;
 	}
 
 	@Override
 	public Computer findById(int id) throws IDNotFoundException {
-		return null;
+		q = em.createQuery("SELECT computer FROM Computer computer "
+						 + "WHERE computer.ID = :id");
+		q.setParameter("id", id);
+		try {
+			return (Computer) q.getSingleResult();
+		} catch (Exception e) {
+			throw new IDNotFoundException();
+		}
 	}
 
 	@Override
 	public void removeById(int id) {
-		
+		try {
+			q = em.createQuery("DELETE FROM Computer computer "
+							 + "WHERE computer.ID = :id");
+			q.setParameter("id", id);
+		} catch (Exception e) {
+			e.getMessage();
+		}
 	}
 
 }
