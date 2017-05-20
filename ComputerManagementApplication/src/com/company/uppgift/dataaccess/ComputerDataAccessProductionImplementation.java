@@ -35,7 +35,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 
 	@Override
 	public List<Computer> findByComputerName(String computerName) {
-		q = em.createQuery("SELECT computer FROM Computer computer WHERE computer.computerName = :computerName");
+		q = em.createQuery("SELECT computer FROM Computer computer WHERE computer.computerName LIKE :computerName");
 		q.setParameter("computerName", computerName);
 		List<Computer> computers = q.getResultList();
 		return computers;
