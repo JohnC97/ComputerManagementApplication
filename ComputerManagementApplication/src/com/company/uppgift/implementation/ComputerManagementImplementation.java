@@ -3,6 +3,7 @@ package com.company.uppgift.implementation;
 import java.util.List;
 
 import com.company.uppgift.dataaccess.ComputerDataAccess;
+import com.company.uppgift.dataaccess.IDNotFoundException;
 import com.company.uppgift.domain.Computer;
 
 public class ComputerManagementImplementation implements ComputerManagementService {
@@ -31,7 +32,7 @@ public class ComputerManagementImplementation implements ComputerManagementServi
 	}
 
 	@Override
-	public Computer searchById(int id) {
+	public Computer searchById(int id) throws IDNotFoundException {
 		return cda.findById(id);
 	}
 

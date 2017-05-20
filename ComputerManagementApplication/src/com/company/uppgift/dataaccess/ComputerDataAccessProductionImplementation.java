@@ -8,7 +8,7 @@ import javax.persistence.Query;
 
 import com.company.uppgift.domain.Computer;
 
-public class ComputerDataAccessProductionImplementation implements ComputerDataAccess{
+public class ComputerDataAccessProductionImplementation implements ComputerDataAccess {
 
 	public ComputerDataAccessProductionImplementation() {}
 	
