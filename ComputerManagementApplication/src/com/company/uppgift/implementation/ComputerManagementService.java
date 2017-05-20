@@ -6,8 +6,8 @@ import javax.ejb.Remote;
 
 import com.company.uppgift.domain.Computer;
 
-	@Remote
-	public interface ComputerManagementService extends ComputerManagementServiceLocal {
+@Remote
+public interface ComputerManagementService extends ComputerManagementServiceLocal {
 
-	}
+}
 
