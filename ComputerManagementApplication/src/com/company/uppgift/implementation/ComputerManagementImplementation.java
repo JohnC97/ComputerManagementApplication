@@ -37,6 +37,7 @@ public class ComputerManagementImplementation implements ComputerManagementServi
 
 	@Override
 	public void removeById(int id) {
+		cda.removeById(id);
 	}
 
 }
