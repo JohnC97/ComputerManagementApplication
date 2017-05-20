@@ -1,10 +1,16 @@
 package com.company.uppgift.domain;
 
-public class Computer {
-	
-	// I'M TESTING 
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
+public class Computer implements Serializable{
 
+		@Id
+		@GeneratedValue(strategy=GenerationType.AUTO)
 		private int id;
 		private String computerName;
 		private String computerType;
@@ -12,7 +18,6 @@ public class Computer {
 		private int computerPrice;
 		private String computerImgSrc;
 		
-//		USE ONLY [A-z]
 		public Computer(){}
 		
 		public Computer(int id, String computerName, String computerType, String computerSpec, int computerPrice,
