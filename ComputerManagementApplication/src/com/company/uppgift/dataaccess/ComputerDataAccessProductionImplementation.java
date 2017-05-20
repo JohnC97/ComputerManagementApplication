@@ -10,7 +10,6 @@ import javax.persistence.Query;
 
 import com.company.uppgift.domain.Computer;
 
-
 @Stateless
 @Default
 public class ComputerDataAccessProductionImplementation implements ComputerDataAccess {
