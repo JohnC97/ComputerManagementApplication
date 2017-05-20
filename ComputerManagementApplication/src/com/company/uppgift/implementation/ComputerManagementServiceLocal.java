@@ -2,9 +2,12 @@ package com.company.uppgift.implementation;
 
 import java.util.List;
 
+import javax.ejb.Local;
+
 import com.company.uppgift.dataaccess.IDNotFoundException;
 import com.company.uppgift.domain.Computer;
 
+@Local
 public interface ComputerManagementServiceLocal {
 	public void registerComputer(Computer computer);
 	public List<Computer> getAllComputers();

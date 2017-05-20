@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
@@ -44,6 +46,24 @@ public class ComputerResource {
 		} catch (IDNotFoundException e) {
 			return Response.status(404).build();
 		}
+	}
+	
+	
+	@GET
+	@Produces("application/JSON")
+	@Path("{priceRange}")
+	public List<Computer> getComputersByPriceRange(@QueryParam("start") int start, @QueryParam("end") int end) {
+		return service.searchByPriceRange(start, end);
+	}
+	
+	
+	
+	
+	@GET
+	@Produces("application/JSON")
+	@Consumes({"application/JSON", "application/XML"})
+	public Response createComputerPost(Computer computer) {
+		return null;
 	}
 
 }

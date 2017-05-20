@@ -2,13 +2,17 @@ package com.company.uppgift.implementation;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+
 import com.company.uppgift.dataaccess.ComputerDataAccess;
 import com.company.uppgift.dataaccess.IDNotFoundException;
 import com.company.uppgift.domain.Computer;
 
+@Stateless
 public class ComputerManagementImplementation implements ComputerManagementService {
 
-	
+	@Inject
 	private ComputerDataAccess cda;
 	
 	@Override
