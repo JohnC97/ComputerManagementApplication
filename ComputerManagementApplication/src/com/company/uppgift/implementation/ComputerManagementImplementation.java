@@ -17,22 +17,22 @@ public class ComputerManagementImplementation implements ComputerManagementServi
 
 	@Override
 	public List<Computer> getAllComputers() {
-		return null;
+		return cda.findAll();
 	}
 
 	@Override
 	public List<Computer> searchByComputerName(String computerName) {
-		return null;
+		return cda.findByComputerName(computerName);
 	}
 
 	@Override
 	public List<Computer> searchByPriceRange(int start, int end) {
-		return null;
+		return cda.findByPriceRange(start, end);
 	}
 
 	@Override
 	public Computer searchById(int id) {
-		return null;
+		return cda.findById(id);
 	}
 
 	@Override
