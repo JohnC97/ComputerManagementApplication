@@ -45,7 +45,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 		
 		Query q = em.createQuery("SELECT computer FROM Computer computer "
 						 	   + "WHERE computer.computerName LIKE :computerName");
-		q.setParameter("computerName", computerName);
+		q.setParameter("computerName", "%" + computerName + "%");
 		List<Computer> computers = q.getResultList();
 		return computers;
 	}
