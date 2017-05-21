@@ -51,7 +51,6 @@ public class ComputerResource {
 	
 	@GET
 	@Produces("application/JSON")
-	@Path("{priceRange}")
 	public List<Computer> getComputersByPriceRange(@QueryParam("start") int start, @QueryParam("end") int end) {
 		return service.searchByPriceRange(start, end);
 	}

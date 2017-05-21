@@ -14,13 +14,9 @@ import com.company.uppgift.domain.Computer;
 @Default
 public class ComputerDataAccessProductionImplementation implements ComputerDataAccess {
 
-	public ComputerDataAccessProductionImplementation() {}
 	
 	@PersistenceContext
 	private EntityManager em;
-	
-	private Query q;
-	
 	
 	
 	@Override
@@ -30,7 +26,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 
 	@Override
 	public List<Computer> findAll() {
-		q = em.createQuery("SELECT computer FROM Computer computer");
+		Query q = em.createQuery("SELECT computer FROM Computer computer");
 		List<Computer> computers = q.getResultList();
 		return computers;
 	}
@@ -46,7 +42,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 //		AND computerSpec LIKE '%Quad Core%'
 //		-- 'Celeron' and 'Quad Core' are not together in the computerSpec
 		
-		q = em.createQuery("SELECT computer FROM Computer computer "
+		Query q = em.createQuery("SELECT computer FROM Computer computer "
 						 + "WHERE computer.computerName LIKE :computerName");
 		q.setParameter("computerName", computerName);
 		List<Computer> computers = q.getResultList();
@@ -55,7 +51,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 
 	@Override
 	public List<Computer> findByPriceRange(int start, int end) {
-		q = em.createQuery("SELECT computer FROM Computer computer "
+		Query q = em.createQuery("SELECT computer FROM Computer computer "
 						 + "WHERE computer.ID >= :start "
 						 + "AND computer.ID <= :end");
 		q.setParameter("start", start);
@@ -66,7 +62,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 
 	@Override
 	public Computer findById(int id) throws IDNotFoundException {
-		q = em.createQuery("SELECT computer FROM Computer computer "
+		Query q = em.createQuery("SELECT computer FROM Computer computer "
 						 + "WHERE computer.ID = :id");
 		q.setParameter("id", id);
 		try {
@@ -79,7 +75,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 	@Override
 	public void removeById(int id) {
 		try {
-			q = em.createQuery("DELETE FROM Computer computer "
+			Query q = em.createQuery("DELETE FROM Computer computer "
 							 + "WHERE computer.ID = :id");
 			q.setParameter("id", id);
 		} catch (Exception e) {
@@ -87,4 +83,5 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 		}
 	}
 
+	public ComputerDataAccessProductionImplementation() {}
 }
