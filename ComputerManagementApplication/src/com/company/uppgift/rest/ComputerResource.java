@@ -31,7 +31,6 @@ public class ComputerResource {
 	// ALL COMPUTERS
 	@GET
 	@Produces("application/JSON")
-	@Path("{all}")
 	public List<Computer> getAllComputers() {
 		return service.getAllComputers();
 	}
@@ -39,7 +38,7 @@ public class ComputerResource {
 	// SEARCH BY ID
 	@GET
 	@Produces("application/JSON")
-	@Path("{searchById}")
+	@Path("{computerId}")
 	public Response findComputerById(@PathParam("computerId") int id, @Context HttpHeaders headers) {
 		try {
 			Computer comp = service.searchById(id);
