@@ -2,8 +2,11 @@ package com.company.uppgift.dataaccess;
 
 import java.util.List;
 
+import javax.ejb.Local;
+
 import com.company.uppgift.domain.Computer;
 
+@Local
 public interface ComputerDataAccess {
 	public abstract void registerComputer(Computer computer);
 	public abstract List<Computer> findAll();

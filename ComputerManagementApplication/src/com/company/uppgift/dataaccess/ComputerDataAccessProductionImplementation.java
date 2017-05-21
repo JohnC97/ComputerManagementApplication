@@ -12,6 +12,7 @@ import com.company.uppgift.domain.Computer;
 
 @Stateless
 @Default
+@ProductionDao
 public class ComputerDataAccessProductionImplementation implements ComputerDataAccess {
 
 	
