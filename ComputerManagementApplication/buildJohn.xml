@@ -18,7 +18,7 @@
 	<property name="server-dist" value="C:\wildfly-10.1.0.Final\wildfly-10.1.0.Final\standalone\deployments"/>
 	-->
 	
-	<property name="server-dist" value="/home/server/wildfly-10.1.0.Final/standalone/deployments"/>
+	<property name="server-dist" value="/home/serverprog/wildfly/wildfly-10.1.0.Final/standalone/deployments"/>
 	<property name="server-jarfile" value="${server-dist}/EmployeeManagementServerApplication.jar"/>
 		<property name="client-jarfile" value="${client-dist}/EmployeeManagementServerClasses.jar"/>
 		<property name="warfile" value="${server-dist}/EmployeeManagement.war"/>	 
