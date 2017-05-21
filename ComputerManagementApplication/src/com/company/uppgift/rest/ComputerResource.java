@@ -24,7 +24,7 @@ import com.company.uppgift.implementation.ComputerManagementServiceLocal;
 public class ComputerResource {
 	
 	@Inject
-	ComputerManagementServiceLocal service;
+	public ComputerManagementServiceLocal service;
 	
 	
 	

@@ -21,8 +21,8 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 	
 	
 	@Override
-	public void registerComputer(Computer computer) {
-		em.persist(computer);
+	public void registerComputer(Computer newComputer) {
+		em.persist(newComputer);
 	}
 
 	@Override
@@ -36,7 +36,6 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 	public List<Computer> findByComputerName(String computerName) {
 		
 //		If the string contains space: should we make an 'AND'?
-		
 //		EX: 
 //		SELECT * FROM Computer 
 //		WHERE computerSpec LIKE '%Celeron%' 
