@@ -23,8 +23,7 @@ public class Computer implements Serializable{
 		
 		public Computer(){}
 		
-		public Computer(int id, String computerName, String computerType, String computerSpec, int computerPrice,
-		String computerImgSrc) {
+		public Computer(int id, String computerName, String computerType, String computerSpec, int computerPrice, String computerImgSrc) {
 			super();
 			this.id = id;
 			this.computerName = computerName;
@@ -86,11 +85,6 @@ public class Computer implements Serializable{
 		public String toString(){
 			return "Computer: " + computerName;
 		}
-		
-		
-		
-		
-		
 		
 	}
 
