@@ -10,7 +10,7 @@ import com.company.uppgift.dataaccess.IDNotFoundException;
 import com.company.uppgift.domain.Computer;
 
 @Stateless
-public class ComputerManagementImplementation implements ComputerManagementService {
+public class ComputerManagementImplementation implements ComputerManagementService, ComputerManagementServiceLocal {
 
 	@Inject
 	private ComputerDataAccess cda;
