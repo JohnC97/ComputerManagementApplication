@@ -7,4 +7,5 @@ Linux:
 $ mysql -uroot -p Computer << FillMeUp.sql
 
 Windows:
-I don't know 
+I don't know
+nice man! 
