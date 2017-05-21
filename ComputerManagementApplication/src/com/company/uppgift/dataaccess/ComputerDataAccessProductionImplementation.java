@@ -44,7 +44,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 //		-- 'Celeron' and 'Quad Core' are not together in the computerSpec
 		
 		Query q = em.createQuery("SELECT computer FROM Computer computer "
-						 + "WHERE computer.computerName LIKE :computerName");
+						 	   + "WHERE computer.computerName LIKE :computerName");
 		q.setParameter("computerName", computerName);
 		List<Computer> computers = q.getResultList();
 		return computers;
