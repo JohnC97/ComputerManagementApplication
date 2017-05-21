@@ -42,15 +42,16 @@ public class ComputerResource {
 	public Response findComputerById(@PathParam("computerId") int id, @Context HttpHeaders headers) {
 		try {
 			Computer comp = service.searchById(id);
-			return Response.ok().build();
+			return Response.ok(comp).build();
 		} catch (IDNotFoundException e) {
 			return Response.status(404).build();
 		}
 	}
 	
-	
+	//-------------------------------------------------------------------------------------------
 	@GET
 	@Produces("application/JSON")
+	@Path("/PriceRange/")
 	public List<Computer> getComputersByPriceRange(@QueryParam("start") int start, @QueryParam("end") int end) {
 		return service.searchByPriceRange(start, end);
 	}

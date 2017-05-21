@@ -63,8 +63,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 
 	@Override
 	public Computer findById(int id) throws IDNotFoundException {
-		Query q = em.createQuery("SELECT computer FROM Computer computer "
-						 + "WHERE computer.ID = :id");
+		Query q = em.createQuery("SELECT computer FROM Computer computer WHERE computer.id = :id");
 		q.setParameter("id", id);
 		try {
 			return (Computer) q.getSingleResult();
