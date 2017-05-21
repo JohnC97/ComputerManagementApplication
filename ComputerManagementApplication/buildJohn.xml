@@ -26,7 +26,7 @@
 										  YOU MUST USE /home/<ComputerName>/path/to/deployments
 	
 	-->
-	<property name="server-dist" value="Documents/serverprog/wildfly/wildfly-10.1.0.Final/standalone/deployments"/>
+	<property name="server-dist" value="/home/john/Documents/serverprog/wildfly/wildfly-10.1.0.Final/standalone/deployments"/>
 	<property name="server-jarfile" value="${server-dist}/ComputerManagementServerApplication.jar"/>
 		<property name="client-jarfile" value="${client-dist}/ComputerManagementServerClasses.jar"/>
 		<property name="warfile" value="${server-dist}/ComputerManagement.war"/>	 
