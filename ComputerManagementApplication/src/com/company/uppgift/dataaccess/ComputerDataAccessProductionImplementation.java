@@ -3,7 +3,6 @@ package com.company.uppgift.dataaccess;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
