@@ -44,5 +44,22 @@ public class ComputerManagementImplementation implements ComputerManagementServi
 	public void removeById(int id) {
 		cda.removeById(id);	
 	}
+	
+	@Override
+	public void updateComputer(int id, int computerPrice, String computerSpec) throws ComputerNotFoundException{
+		Computer c;
+		try {
+			c = searchById(id);
+			c.setComputerPrice(computerPrice);
+			c.setComputerSpec(computerSpec);
+		} catch (IDNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+
 
 }

@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -18,6 +19,7 @@ import javax.ws.rs.core.Response;
 import com.company.uppgift.dataaccess.IDNotFoundException;
 import com.company.uppgift.domain.Computer;
 import com.company.uppgift.implementation.ComputerManagementServiceLocal;
+import com.company.uppgift.implementation.ComputerNotFoundException;
 
 @Stateless
 @Path("/computers")
@@ -73,5 +75,22 @@ public class ComputerResource {
 	public Response createComputerPost(Computer computer) {
 		return null;
 	}
+	
+	
+	@PUT
+	@Path("{computerNo}")
+	@Produces({"application/JSON", "application/XML"})
+	@Consumes({"application/JSON"})
+	public Response updateComputer(@PathParam("computerNo") int id, Computer c) throws IDNotFoundException {
+		try {
+			service.updateComputer(id, c.getComputerPrice(), c.getComputerSpec());
+			return Response.ok(service.searchById(id)).build();
+		} catch (ComputerNotFoundException e1) {
+			return Response.status(404).build();
+		}
+	}
+	
+	
+	
 
 }
