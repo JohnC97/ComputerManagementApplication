@@ -15,4 +15,5 @@ public interface ComputerManagementServiceLocal {
 	public List<Computer> searchByPriceRange(int start, int end);   // delete this and become a dick, dickhead.
 	public Computer searchById(int id) throws IDNotFoundException;
 	public void removeById(int id);
+	void updateComputer(int id, int computerPrice, String computerSpec) throws ComputerNotFoundException;
 }
