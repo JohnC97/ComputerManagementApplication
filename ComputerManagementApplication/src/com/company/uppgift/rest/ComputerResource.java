@@ -38,19 +38,28 @@ public class ComputerResource {
 	// SEARCH BY ID
 	@GET
 	@Produces("application/JSON")
-	@Path("{computerId}")
+	@Path("/id/{computerId}")
 	public Response findComputerById(@PathParam("computerId") int id, @Context HttpHeaders headers) {
 		try {
 			Computer comp = service.searchById(id);
-			return Response.ok().build();
+			return Response.ok(comp).build();
 		} catch (IDNotFoundException e) {
 			return Response.status(404).build();
 		}
 	}
 	
-	
+	// SEARCH BY computerName
 	@GET
 	@Produces("application/JSON")
+	@Path("/name/{computerName}")
+	public List<Computer> getComputersByName(@PathParam("computerName") String computerName, @Context HttpHeaders headers) {		
+		return service.searchByComputerName(computerName);
+	}
+	
+	// Price Range
+	@GET
+	@Produces("application/JSON")
+	@Path("/PriceRange")
 	public List<Computer> getComputersByPriceRange(@QueryParam("start") int start, @QueryParam("end") int end) {
 		return service.searchByPriceRange(start, end);
 	}

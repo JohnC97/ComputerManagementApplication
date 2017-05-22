@@ -41,10 +41,23 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 //		WHERE computerSpec LIKE '%Celeron%' 
 //		AND computerSpec LIKE '%Quad Core%'
 //		-- 'Celeron' and 'Quad Core' are not together in the computerSpec
+
+		
+		// IF string contains a space add an AND 
+		String addAnd = "";
+		String firstWord = "";
+		if (computerName.contains(" ")) {
+		    //System.out.println(example.substring(example.lastIndexOf("/") + 1));
+			firstWord = "" + computerName.substring(computerName.indexOf(" ")-1);
+			System.out.println(firstWord);
+			addAnd = "AND computerName LIKE %" + computerName.substring(computerName.lastIndexOf(" ")+1) + "%";		
+			System.out.println(addAnd);
+		}
 		
 		Query q = em.createQuery("SELECT computer FROM Computer computer "
-						 + "WHERE computer.computerName LIKE :computerName");
-		q.setParameter("computerName", computerName);
+						 	   + "WHERE computer.computerName LIKE :computerName");
+		q.setParameter("computerName", "%" + computerName + "%" + addAnd);			
+		
 		List<Computer> computers = q.getResultList();
 		return computers;
 	}
@@ -62,8 +75,7 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 
 	@Override
 	public Computer findById(int id) throws IDNotFoundException {
-		Query q = em.createQuery("SELECT computer FROM Computer computer "
-						 + "WHERE computer.ID = :id");
+		Query q = em.createQuery("SELECT computer FROM Computer computer WHERE computer.id = :id");
 		q.setParameter("id", id);
 		try {
 			return (Computer) q.getSingleResult();
