@@ -1,0 +1,68 @@
+<html>
+
+   <head>
+   	  <style>
+      * { font-family: sans-serif; }
+   	  </style>
+      <title>jQuery</title>
+      <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+		
+      <script type="text/javascript" language="javascript">
+         $(document).ready(function() {
+            $("#driver").click(function(event) {
+				
+               $.getJSON('http://jsonplaceholder.typicode.com/posts/', function(jd) {
+            	 /*
+            	   $('#stage').html('<p> User ID: ' + jd.userId + '</p>');
+                   $('#stage').append('<p>ID: ' + jd.id + '</p>');
+                   $('#stage').append('<p>Title: ' + jd.title + '</p>');
+                   $('#stage').append('<p> Body: ' + jd.body + '</p>');
+                 */
+                   //THESE WORKS
+                   
+                  // for(var i = 0; i < jd.length; i++) {}
+                 /*
+              	 $('#stage').html('<table>');
+              	 jd.forEach(function (jd) {
+                    $('#stage').append('<br>');
+                    $('#stage').append('<tr><th style="float: right;">User ID:</th><td>' + jd.userId + '</td></tr>');
+                    $('#stage').append('<tr><th style="float: right;">ID:</th><td>'      + jd.id     + '</td></tr>');
+                    $('#stage').append('<tr><th style="float: right;">Title:</th><td>'   + jd.title  + '</td></tr>');
+                    $('#stage').append('<tr><th style="float: right;">Body:</th><td>'    + jd.body   + '</td></tr>');
+                    $('#stage').append('<br>');
+                 });
+                 $('#stage').append('</table>');     
+                 */
+                 
+                 $('#stage').html('<table>');
+              	 jd.forEach(function (jd) {
+                    $('#stage').append('<tr><th>User ID:</th><td>' + jd.userId + '</td></tr>');
+                    $('#stage').append('<tr><th>ID:</th><td>'      + jd.id     + '</td></tr>');
+                    $('#stage').append('<tr><th>Title:</th><td>'   + jd.title  + '</td></tr>');
+                    $('#stage').append('<tr><th>Body:</th><td>'    + jd.body   + '</td></tr>');
+                    $('#stage').append('<br>');
+                 });
+                 $('#stage').append('</table>');
+
+                   
+                   
+                   
+               });
+					
+            });
+         });
+      </script>
+   </head>
+	
+   <body>
+	
+      
+		
+      <div id="stage" style="background-color:#eee;"></div>
+		
+      <input type="button" id="driver" value="Load Data" />
+		
+   </body>
+	
+</html>
