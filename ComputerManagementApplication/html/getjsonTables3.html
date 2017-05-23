@@ -1,0 +1,113 @@
+<html>
+
+   <head>
+   	  <style>
+      * { font-family: sans-serif; }
+      * { background-color: ivory; }
+   	  </style>
+      <title>jQuery WORKS</title>
+      <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+		
+      <script type="text/javascript" language="javascript">
+      console.log("Loading json..");
+         $(document).ready(function() {
+            
+			/* --- DRIVER GET ALL DATA JSON --- */
+        	 $("#driver").click(function(event) {
+				var i = 1;
+				
+               $.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/', function(jd) {
+            	 console.log("madhacker.lol in getJSON..");
+            	   //$('#div').html('<p> TEST </p>');
+              	 jd.forEach(function (jd) {
+              	 $('#div').append('<div style="clear: left;">');
+            	 $('#div').append('<table>');                 
+                 $('#div').append('<p style="float: left;"><img border="1" src="' + jd.computerImgSrc + '"></p>'); 
+                 $('#div').append('<br><br>');
+                   /* 
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">UserID:</th><td>' + jd.userId + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">ID:</th><td>'      + jd.id     + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Title:</th><td>'   + jd.title  + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Body:</th><td>'    + jd.body   + '</td></tr>');
+                    $('#div').append('<br><br>');
+                    $('#div').append('</div>');
+                    */
+                    
+                    /*
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">UserID:</th><td>'  + jd.id + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">ID:</th><td>'      + jd.computerType     + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Title:</th><td>'   + jd.computerName  + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Body:</th><td>'    + jd.computerSpec   + '</td></tr>');
+                    $('#div').append('<br><br>');
+                    $('#div').append('</div>');
+                    */
+                    
+                    
+                    
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">ID:</th><td>'  + jd.id 			 + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Type:</th><td>'      + jd.computerType   + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Name:</th><td>'   + jd.computerName   + '</td></tr>');
+                    $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Spec:</th><td>'    + jd.computerSpec   + '</td></tr>');
+                    $('#div').append('<br><br>');
+                    $('#div').append('</div>');
+                    
+                    console.log("Loaded nr " + i++);
+                 });
+                 $('#div').append('</table>');
+               });
+            });
+        /*     
+		$(document).ready(function() {
+			$("#singleComputer").click(function(event) {
+			$.getJSON('http://jsonplaceholder.typicode.com/posts/1', function(jd) {
+				
+					$('#div').append('<div style="clear: left;">');
+	                $('#div').append('<table>');                 
+	                $('#div').append('<p style="float: left;"><img border="1" src="https://www.komplett.se/img/p/200/898888.jpg"></p>');
+	                $('#div').append('<br><br>');
+	                $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">UserID:</th><td>' + jd.userId + '</td></tr>');
+	                $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">ID:</th><td>'      + jd.id     + '</td></tr>');
+					$('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Title:</th><td>'   + jd.title  + '</td></tr>');
+	                $('#div').append('<tr><th style="text-align: right; padding-right: 1rem;">Body:</th><td>'    + jd.body   + '</td></tr>');
+	                $('#div').append('<br><br>');
+	                $('#div').append('</div>');
+				
+				$('#div').append('</table>');    
+				});	
+			});*/
+                
+         
+            $(document).ready(function() {
+            	$("#clear").click(function(event) {
+            		console.log("CLEAR");
+            		$('#div').html('');
+                });
+            });
+               
+         });
+      </script>
+   </head>
+	
+   <body>
+	
+      
+		
+      <input type="button" id="driver" value="Load All Data" />
+      <input type="button" id="singleComputer" value="GET COMPUTER WITH ID 1" />
+      <input type="button" id="clear" value="CLEAR" />
+      
+      <br>
+      <div id="div" style="background-color:#eee;"></div>
+		
+		
+	<script type="text/javascript">
+    	function clear() {
+    		console.log("clear init..");
+			//document.getElementById("div").innerHTML = "";
+    	}
+    </script>   
+		
+   </body>
+	
+</html>
