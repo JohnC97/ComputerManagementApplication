@@ -1,11 +1,9 @@
+<!DOCTYPE html>
 <html>
 
    <head>
-   	  <style>
-      * { font-family: sans-serif; }
-      * { background-color: ivory; }
-   	  </style>
-      <title>jQuery WORKS</title>
+   <link href="css/style.css" rel="stylesheet">
+      <title>Computers</title>
       <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
       </script>
 		
@@ -17,12 +15,12 @@
         	 $("#driver").click(function(event) {
 				var i = 1;
 				
-               $.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/name/Lenovo', function(jd) {
+               $.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/', function(jd) {
             	   // Should be able to get with id
               	 jd.forEach(function (jd) {
-              	   $('#div').append('<div style="clear: left;">');
+              	   $('#div').append('<div id="division' + jd.id + '" style="clear: left;">');
             	   $('#div').append('<table>');                 
-                   $('#div').append('<p style="float: left;"><img border="1" src="' + jd.computerImgSrc + '"></p>'); 
+                   $('#div').append('<p style="float: left;"><img  id="image' + jd.id + '" onclick="changetext()" src="' + jd.computerImgSrc + '"></p>'); 
                    $('#div').append('<br><br>');
                  
 					// IT'S ALIVE                    
@@ -52,22 +50,28 @@
 	
    <body>
 	
-      
-	  <br>
-      <input type="button" id="driver" value="Load All Data" />
-      <input type="button" id="singleComputer" value="GET COMPUTER WITH ID 1" />
-      <input type="button" id="clear" value="CLEAR" />
-      
-      <br>
-      <div id="div"></div>
-		
-		
 	<script type="text/javascript">
-    	//function clear() {
+    	function changetext() {
+    		document.getElementById("pText").innerHTML = "";
+    	}
+		//function clear() {
     	//	console.log("clear init..");
 		//	//document.getElementById("div").innerHTML = "";
     	//}
     </script>   
+      
+	  <br>
+	  <button onclick="#driver">TEST</button>
+      <input type="button" id="driver" value="Load All Data" />
+      <input type="button" id="singleComputer" value="GET COMPUTER WITH ID 1" />
+      <input type="button" id="clear" value="CLEAR" />
+      <p id="pText">unchanged text</p>
+      
+      <br>
+     
+      <div id="div"></div>
+	
+				
 		
    </body>
 	
