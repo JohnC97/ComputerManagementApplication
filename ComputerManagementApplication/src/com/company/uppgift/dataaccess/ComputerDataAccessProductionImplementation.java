@@ -66,8 +66,8 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 	@Override
 	public List<Computer> findByPriceRange(int start, int end) {
 		Query q = em.createQuery("SELECT computer FROM Computer computer "
-						 + "WHERE computer.ID >= :start "
-						 + "AND computer.ID <= :end");
+						 + "WHERE computer.computerPrice >= :start "
+						 + "AND computer.computerPrice <= :end");
 		q.setParameter("start", start);
 		q.setParameter("end", end);
 		List<Computer> computers = q.getResultList();

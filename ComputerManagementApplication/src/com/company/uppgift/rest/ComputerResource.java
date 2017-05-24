@@ -47,6 +47,7 @@ public class ComputerResource {
 	public Response getComputersByPriceRange(@DefaultValue ("0") @QueryParam("start") Integer start, @QueryParam("end") Integer end) {
 		
 		if (start == null || end == null) {
+			System.out.println("\n\n\n\tstart is null\n\n\n");
 			return Response.ok(service.getAllComputers())
 					.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE")
 					.header("Access-Control-Allow-Origin", "*")
@@ -55,6 +56,8 @@ public class ComputerResource {
 		}
 		
 		if(start != null && end != null) {
+			System.out.println("start is not null");
+			System.out.println("start: " + start + "\nend: " + end);
 			return Response.ok(service.searchByPriceRange(start, end))
 					.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE")
 					.header("Access-Control-Allow-Origin", "*")
