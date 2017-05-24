@@ -3,15 +3,15 @@ $(document).ready(function() {
 	/* --- DRIVER GET ALL DATA JSON --- */
 	//alert("hello");
 	$("#driver").click(function(event) {
-		var i = 1;
+		var i = 0;
 		$('#div').html('');
 		changetext("Loading JSON data from database..");
 		$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/', function(jd) {
 		// Should be able to get with id
 			jd.forEach(function (jd) {
 				$('#div').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
-				$('#div').append('<table>');                 
-				$('#div').append('<p style="float: left;"> <img id="image' + jd.id + '" onclick="changetext()" src="' + jd.computerImgSrc + '"></p>'); 
+				$('#div').append('<table>');
+				$('#div').append('<p style="float: left;"> <img id="image' + jd.id + '" onclick="changetext()" src="' + jd.computerImgSrc + '"></p>');
 				$('#div').append('<br>');
 		// IT'S ALIVE
 		// Here is javascript getting all values from json
@@ -28,9 +28,14 @@ $(document).ready(function() {
 				$('#div').append('<tr><th>Spec:</th><td>'  + jd.computerSpec  + 	   '</td></tr>');
 				$('#div').append('<br><br>');
 				$('#div').append('</div>');
+
+				$('#div').append('<div id="spacediv">');
+				$('#div').append('<br><br><br><br><br><br><br><br>');
+				$('#div').append('</div>');
+				i++;
 	     });
 	     $('#div').append('</table>');
-	     changetext();
+	     changetext(i + " post found");
 	   });
 	});        
 	changetext();

@@ -1,0 +1,119 @@
+
+
+.buttonGet:HOVER, .buttonClear:HOVER, .buttonID:HOVER {
+	opacity: 0.7;
+}
+
+.buttonGet:ACTIVE, .buttonClear:ACTIVE, .buttonID:ACTIVE{
+	opacity: 0.5;
+}
+
+.buttonGet, .buttonClear, .buttonID {
+	border-radius: 35px;
+	border: none;
+	text-align: center;
+	font-size: 28px;
+	color: #FFFFFF;
+	padding: 20px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+	position: relative;
+	-webkit-animation-name: animatebottom;
+	-webkit-animation-duration: 1s;
+	animation-name: animatebottom;
+}
+
+
+/* GET ALL BUTTON */
+.buttonGet {
+	width: 200px;
+	background-color: #4CAF50;
+	animation-duration: 1s;
+}
+/* GET ID BUTTON */
+.buttonID {
+	width: 260px;
+	background-color: #4CAF50;
+	animation-duration: 1.2s;
+}
+
+/* CLEAR BUTTON */
+.buttonClear {
+  	background-color: #f4511e;
+	width: 220px;
+	animation-duration: 1.4s;
+}
+
+.buttonGet span, .buttonClear span, .buttonID span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+/*
+.buttonGet span:after, .buttonClear span:after{
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}*/
+
+.buttonID span:AFTER {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+/*
+.buttonGet:hover span, .buttonClear:hover span {
+	padding-right: 25px;
+}*/
+.buttonID:hover span {
+	padding-right: 25px;
+}
+/*
+.buttonGet:hover span:after, .buttonClear:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+*/
+
+.buttonID:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+@-webkit-keyframes animatebottom {
+	from {
+	  bottom:-100px;
+	  opacity:0;
+	} 
+	to {
+	  bottom:0px;
+	  opacity:1;
+	}
+}
+@keyframes animatebottom { 
+	from {
+	  bottom:-100px;
+	  opacity:0;
+	} 
+	to {
+	  bottom:0;
+	  opacity:1;
+	}
+}
+
+
+
+
+
+
+
+
