@@ -52,6 +52,16 @@
 	transition: 0.5s;
 }
 
+/*
+.buttonGet span:after, .buttonClear span:after{
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}*/
+
 .buttonID span:AFTER {
 	content: '\00bb';
 	position: absolute;
@@ -61,10 +71,19 @@
 	transition: 0.5s;
 }
 
+/*
+.buttonGet:hover span, .buttonClear:hover span {
+	padding-right: 25px;
+}*/
 .buttonID:hover span {
 	padding-right: 25px;
 }
-
+/*
+.buttonGet:hover span:after, .buttonClear:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+*/
 
 .buttonID:hover span:after {
 	opacity: 1;
