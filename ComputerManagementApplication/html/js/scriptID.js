@@ -23,11 +23,13 @@ $(document).ready(function() {
 					$('#divID').append('</table>');
 		     changetext("Result for ID: " + id);
 		   });
+			
 		} else {
 			changetext("NO ID GIVEN");
 		}
 		
-	});    
+	});
+
 });
 
 function changetext(string) {

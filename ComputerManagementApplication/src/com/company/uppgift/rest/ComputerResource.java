@@ -54,7 +54,7 @@ public class ComputerResource {
 					.build();
 		}
 		
-		if(start != null && end != null){
+		if(start != null && end != null) {
 			return Response.ok(service.searchByPriceRange(start, end))
 					.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE")
 					.header("Access-Control-Allow-Origin", "*")

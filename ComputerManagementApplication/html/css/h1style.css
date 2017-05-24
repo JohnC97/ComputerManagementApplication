@@ -36,11 +36,13 @@ h1, input#id {
 }
 
 input#id {
-	size: 3;
-	border:none;
-	font-size:xx-large;
-	text-align:center;
-	border-bottom:thick black;
 	background-color: ivory;
+	color: #979797;
+	padding-left:1rem;
+	width: 7em;
+	font-size: xx-large;
+	text-align: left;
+	text-transform: uppercase;
+	border:solid 3px #BFBDBD;
 }
 
