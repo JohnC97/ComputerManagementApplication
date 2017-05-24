@@ -1,12 +1,14 @@
-h1 {
+h1{
 	-webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
          -moz-user-select: none; /* Firefox */
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-                                  
+                                  supported by Chrome and Opera */                                  
+}
+
+h1, input#id {
 	-webkit-animation-name: animate;
 	-webkit-animation-duration: 1.5s;
 	animation-name: animate;
@@ -32,3 +34,13 @@ h1 {
 	  opacity:1;
 	}
 }
+
+input#id {
+	size: 3;
+	border:none;
+	font-size:xx-large;
+	text-align:center;
+	border-bottom:thick black;
+	background-color: ivory;
+}
+

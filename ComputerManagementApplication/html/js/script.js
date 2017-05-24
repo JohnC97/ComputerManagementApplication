@@ -11,7 +11,7 @@ $(document).ready(function() {
 			jd.forEach(function (jd) {
 				$('#div').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 				$('#div').append('<table>');
-				$('#div').append('<p style="float: left;"> <img id="image' + jd.id + '" onclick="changetext()" src="' + jd.computerImgSrc + '"></p>');
+				$('#div').append('<p style="float: left;"> <img id="image' + jd.id + '" src="' + jd.computerImgSrc + '"></p>');
 				$('#div').append('<br>');
 		// IT'S ALIVE
 		// Here is javascript getting all values from json
