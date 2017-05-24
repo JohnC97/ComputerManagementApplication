@@ -75,9 +75,9 @@ public class ComputerResource {
 		try {
 			Computer comp = service.searchById(id);
 			return Response.ok(comp)
-					.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE")
+					.header("Access-Control-Allow-Methods", "*")
 					.header("Access-Control-Allow-Origin", "*")
-					.header("Allow", "GET,HEAD,PUT,PATCH,POST,DELETE")
+					.header("Allow", "*")
 					.build();
 		} catch (IDNotFoundException e) {
 			return Response.status(404).build();

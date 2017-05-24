@@ -6,4 +6,29 @@ h1 {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+                                  
+	-webkit-animation-name: animate;
+	-webkit-animation-duration: 1.5s;
+	animation-name: animate;
+}
+
+@-webkit-keyframes animate {
+	from {
+	  bottom:-100px;
+	  opacity:0;
+	} 
+	to {
+	  bottom:0px;
+	  opacity:1;
+	}
+}
+@keyframes animate { 
+	from {
+	  bottom:-100px;
+	  opacity:0;
+	} 
+	to {
+	  bottom:0;
+	  opacity:1;
+	}
 }

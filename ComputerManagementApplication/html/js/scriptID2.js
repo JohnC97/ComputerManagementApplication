@@ -5,12 +5,13 @@ $(document).ready(function() {
 		var i = 0;
 		$('#divID').html('');
 		changetext("Loading JSON data from database..");
-		var id = document.getElementById("mySearch").value;
-		$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/id/' + id, function(jd) {
+		$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/id/1', function(jd) {
+			jd.forEach(function (jd) {
 				$('#divID').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 				$('#divID').append('<table>');
 				$('#divID').append('<p style="float: left;"> <img id="image' + jd.id + '" onclick="changetext()" src="' + jd.computerImgSrc + '"></p>');
 				$('#divID').append('<br>');
+				
 				$('#divID').append('<tr><th>ID:</th><td>'    + jd.id 			  +		   '</td></tr>');
 				$('#divID').append('<tr><th>Name:</th><td>'  + jd.computerName  +		   '</td></tr>');
 				$('#divID').append('<tr><th>Price:</th><td>' + jd.computerPrice + ":-" + '</td></tr>');
@@ -18,10 +19,12 @@ $(document).ready(function() {
 				$('#divID').append('<tr><th>Spec:</th><td>'  + jd.computerSpec  + 	   '</td></tr>');
 				$('#divID').append('<br><br>');
 				$('#divID').append('</div>');
+
 				$('#divID').append('<div id="spacediv">');
 				$('#divID').append('<br><br><br><br><br><br><br><br>');
 				$('#divID').append('</div>');
 				i++;
+	     });
 	     $('#divID').append('</table>');
 	     changetext(i + " post found");
 	   });
