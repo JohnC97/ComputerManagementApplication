@@ -20,7 +20,7 @@ $(document).ready(function() {
 				$('#div').append('<br><br>');
 				$('#div').append('</div>');
 				$('#div').append('<div id="spacediv">');
-				$('#div').append('<br><br><br><br><br><br><br><br>');
+				$('#div').append('<br><br>');
 				$('#div').append('</div>');
 				i++;
 	     });

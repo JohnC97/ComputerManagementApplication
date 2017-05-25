@@ -2,12 +2,21 @@
 $(document).ready(function() {
 	$("#driver").click(function(event) {
 		$('#divID').html('');
-		var startValue = document.getElementById("startValue").value;
-		var endValue = document.getElementById("endValue").value;
+		var startValue = new Number(document.getElementById("startValue").value);
+		var endValue = new Number(document.getElementById("endValue").value);
 		changetext("Searching");
 		document.getElementById("startValue").value = "";
 		document.getElementById("endValue").value = "";
 		var i = 0;
+		
+//		if (startValue > endValue) {
+//			alert("startValue is greater than endValue:\nstartValue: " 
+//					+ startValue 
+//					+ "\nendValue: " + endValue);
+//			alert("startValue is a: " + typeof startValue
+//				+ "\n endValue is a: " + typeof endValue);
+//		}
+		
 		if (!startValue == "" && !endValue == "" && startValue >= 0 && endValue > startValue) {
 			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers?start=' + startValue + '&end=' + endValue, function(jd) {
 					jd.forEach(function (jd){
@@ -29,8 +38,8 @@ $(document).ready(function() {
 		     changetext(i + " post found between " + startValue + ":- and " + endValue + ":-");
 		   });
 			
-		} else if (startValue) {
-			changetext("You must enter ");
+		} else if (startValue > endValue) {
+			changetext("lowest value must be lower than highest");
 		}
 		
 	});
