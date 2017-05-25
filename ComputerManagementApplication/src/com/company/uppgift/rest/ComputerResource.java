@@ -65,7 +65,7 @@ public class ComputerResource {
 					.build();
 		}
 		
-		else{
+		else {
 			return Response.status(400).build();
 		}
 	}

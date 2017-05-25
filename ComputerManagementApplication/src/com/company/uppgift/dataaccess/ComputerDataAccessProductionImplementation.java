@@ -44,20 +44,23 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 //		-- 'Celeron' and 'Quad Core' are not together in the computerSpec
 
 		
-		// IF string contains a space add an AND 
+		// IF string contains a space add an AND
 		String addAnd = "";
-		String firstWord = "";
 		if (computerName.contains(" ")) {
-		    //System.out.println(example.substring(example.lastIndexOf("/") + 1));
-			firstWord = "" + computerName.substring(computerName.indexOf(" ")-1);
-			System.out.println(firstWord);
-			addAnd = "AND computerName LIKE %" + computerName.substring(computerName.lastIndexOf(" ")+1) + "%";		
-			System.out.println(addAnd);
+			String[] parts = computerName.split("\\ ");
+			computerName = parts[0];
+			for (int i = 1; i < parts.length; i++) {
+				addAnd += " AND computer.computerName LIKE"
+						+ " %" + parts[i] + "% ";
+			}
+			
 		}
 		
 		Query q = em.createQuery("SELECT computer FROM Computer computer "
 						 	   + "WHERE computer.computerName LIKE :computerName");
 		q.setParameter("computerName", "%" + computerName + "%" + addAnd);			
+		
+		System.out.println("\n\n\n\n\nComputername: " + computerName + "\naddAnd: " + addAnd + "\n\n\n\n\n");
 		
 		List<Computer> computers = q.getResultList();
 		return computers;
