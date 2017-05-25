@@ -10,7 +10,6 @@ $(document).ready(function() {
 		var i = 0;
 		if (!startValue == "" && !endValue == "" && startValue >= 0 && endValue > startValue) {
 			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers?start=' + startValue + '&end=' + endValue, function(jd) {
-					changetext("success");
 					jd.forEach(function (jd){
 						$('#divID').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 						$('#divID').append('<table>');

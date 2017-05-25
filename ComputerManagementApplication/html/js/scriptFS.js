@@ -9,15 +9,7 @@ $(document).ready(function() {
 		if (!free == "") {
 			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/name/' + free, function(jd) {
 					changetext("success");
-//					alert(typeof jd);
-//					if (typeof jd === 'object') {
-//						alert(typeof jd);
-//					}
-					
 					jd.forEach(function (jd){
-//						if (jd.id == null || jd.id == "") {
-//							alert("No Cumputer with name: " + free);
-//						}
 						$('#divID').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 						$('#divID').append('<table>');
 						$('#divID').append('<p style="float: left;"> <img id="image' + jd.id + '" src="' + jd.computerImgSrc + '"></p>');
