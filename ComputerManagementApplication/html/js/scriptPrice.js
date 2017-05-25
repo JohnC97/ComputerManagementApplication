@@ -2,22 +2,16 @@
 $(document).ready(function() {
 	$("#driver").click(function(event) {
 		$('#divID').html('');
-		var free = document.getElementById("free").value;
+		var startValue = document.getElementById("startValue").value;
+		var endValue = document.getElementById("endValue").value;
 		changetext("Searching");
-		document.getElementById("free").value = "";
+		document.getElementById("startValue").value = "";
+		document.getElementById("endValue").value = "";
 		var i = 0;
-		if (!free == "") {
-			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/name/' + free, function(jd) {
+		if (!startValue == "" && !endValue == "" && startValue >= 0 && endValue > startValue) {
+			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers?start=' + startValue + '&end=' + endValue, function(jd) {
 					changetext("success");
-//					alert(typeof jd);
-//					if (typeof jd === 'object') {
-//						alert(typeof jd);
-//					}
-					
 					jd.forEach(function (jd){
-//						if (jd.id == null || jd.id == "") {
-//							alert("No Cumputer with name: " + free);
-//						}
 						$('#divID').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 						$('#divID').append('<table>');
 						$('#divID').append('<p style="float: left;"> <img id="image' + jd.id + '" src="' + jd.computerImgSrc + '"></p>');
@@ -32,13 +26,12 @@ $(document).ready(function() {
 						$('#divID').append('</div>');
 						$('#divID').append('</table>');
 						i++;
-						return null;
 					});
-		     changetext(i + " post found for search word(s): " + free);
+		     changetext(i + " post found between " + startValue + ":- and " + endValue + ":-");
 		   });
 			
-		} else {
-			changetext("You must enter atleast one search word");
+		} else if (startValue) {
+			changetext("You must enter ");
 		}
 		
 	});

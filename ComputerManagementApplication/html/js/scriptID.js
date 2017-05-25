@@ -8,6 +8,9 @@ $(document).ready(function() {
 		if (!id == "") {
 			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/id/' + id, function(jd) {
 					changetext("success");
+					if (typeof jd === 'object') {
+						alert(typeof jd);
+					}
 					$('#divID').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 					$('#divID').append('<table>');
 					$('#divID').append('<p style="float: left;"> <img id="image' + jd.id + '" src="' + jd.computerImgSrc + '"></p>');
@@ -22,7 +25,8 @@ $(document).ready(function() {
 					$('#divID').append('</div>');
 					$('#divID').append('</table>');
 		     changetext("Result for ID: " + id);
-		   });
+		   })
+//			.complete(function() { alert("Done"); }); //Works
 			
 		} else {
 			changetext("NO ID GIVEN");
