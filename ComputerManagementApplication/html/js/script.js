@@ -1,7 +1,6 @@
 
 $(document).ready(function() {
 	/* --- DRIVER GET ALL DATA JSON --- */
-	//alert("hello");
 	$("#driver").click(function(event) {
 		var i = 0;
 		$('#div').html('');
@@ -12,15 +11,7 @@ $(document).ready(function() {
 				$('#div').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 				$('#div').append('<table>');
 				$('#div').append('<p style="float: left;"> <img id="image' + jd.id + '" src="' + jd.computerImgSrc + '"></p>');
-				$('#div').append('<br>');
-		// IT'S ALIVE
-		// Here is javascript getting all values from json
-				/*
-				if (jd.id == 1) {
-					alert("id is 1");
-				}
-				*/
-				
+				$('#div').append('<br>');				
 				$('#div').append('<tr><th>ID:</th><td>'    + jd.id 			  +		   '</td></tr>');
 				$('#div').append('<tr><th>Name:</th><td>'  + jd.computerName  +		   '</td></tr>');
 				$('#div').append('<tr><th>Price:</th><td>' + jd.computerPrice + ":-" + '</td></tr>');
@@ -28,7 +19,6 @@ $(document).ready(function() {
 				$('#div').append('<tr><th>Spec:</th><td>'  + jd.computerSpec  + 	   '</td></tr>');
 				$('#div').append('<br><br>');
 				$('#div').append('</div>');
-
 				$('#div').append('<div id="spacediv">');
 				$('#div').append('<br><br><br><br><br><br><br><br>');
 				$('#div').append('</div>');
