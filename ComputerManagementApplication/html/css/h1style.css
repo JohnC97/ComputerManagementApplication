@@ -1,4 +1,4 @@
-h1{
+h1 {
 	-webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
@@ -8,7 +8,7 @@ h1{
                                   supported by Chrome and Opera */                                  
 }
 
-h1, input#id {
+h1, input#id, input#free {
 	-webkit-animation-name: animate;
 	-webkit-animation-duration: 1.5s;
 	animation-name: animate;
@@ -35,7 +35,7 @@ h1, input#id {
 	}
 }
 
-input#id {
+input#id, input#free {
 	background-color: ivory;
 	color: #979797;
 	padding-left:1rem;
@@ -44,5 +44,14 @@ input#id {
 	text-align: left;
 	text-transform: uppercase;
 	border:solid 3px #BFBDBD;
+}
+
+input#free {
+	width: 13em;
+}
+p#info {
+	text-align: center;
+	text-transform: capitalize;
+	color: gray;
 }
 

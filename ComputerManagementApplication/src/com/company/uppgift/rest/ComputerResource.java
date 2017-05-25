@@ -59,9 +59,9 @@ public class ComputerResource {
 			System.out.println("start is not null");
 			System.out.println("start: " + start + "\nend: " + end);
 			return Response.ok(service.searchByPriceRange(start, end))
-					.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE")
+					.header("Access-Control-Allow-Methods", "*")
 					.header("Access-Control-Allow-Origin", "*")
-					.header("Allow", "GET,HEAD,PUT,PATCH,POST,DELETE")
+					.header("Allow", "*")
 					.build();
 		}
 		
@@ -88,11 +88,25 @@ public class ComputerResource {
 	}
 	
 	// SEARCH BY computerName
+//	@GET
+//	@Produces("application/JSON")
+//	@Path("/name/{computerName}")
+//	public List<Computer> getComputersByName(@PathParam("computerName") String computerName, @Context HttpHeaders headers) {		
+//		return service.searchByComputerName(computerName);
+//	}
 	@GET
 	@Produces("application/JSON")
 	@Path("/name/{computerName}")
-	public List<Computer> getComputersByName(@PathParam("computerName") String computerName, @Context HttpHeaders headers) {		
-		return service.searchByComputerName(computerName);
+	public Response getComputersByName(@PathParam("computerName") String computerName, @Context HttpHeaders headers) {		
+		try {
+			return Response.ok(service.searchByComputerName(computerName))
+					.header("Access-Control-Allow-Methods", "*")
+					.header("Access-Control-Allow-Origin", "*")
+					.header("Allow", "*")
+					.build();
+		} catch (Exception e) {
+			return Response.status(404).build();
+		}
 	}
 	
 	
