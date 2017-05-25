@@ -51,17 +51,16 @@ public class ComputerDataAccessProductionImplementation implements ComputerDataA
 			computerName = parts[0];
 			for (int i = 1; i < parts.length; i++) {
 				addAnd += " AND computer.computerName LIKE"
-						+ " %" + parts[i] + "% ";
+						+ " '%" + parts[i] + "%' ";
 			}
 			
 		}
 		
 		Query q = em.createQuery("SELECT computer FROM Computer computer "
-						 	   + "WHERE computer.computerName LIKE :computerName");
-		q.setParameter("computerName", "%" + computerName + "%" + addAnd);			
-		
-		System.out.println("\n\n\n\n\nComputername: " + computerName + "\naddAnd: " + addAnd + "\n\n\n\n\n");
-		
+						 	   + "WHERE computer.computerName LIKE :computerName"
+						 	   + addAnd);
+		q.setParameter("computerName", "%" + computerName + "%");
+				
 		List<Computer> computers = q.getResultList();
 		return computers;
 	}
