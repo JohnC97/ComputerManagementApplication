@@ -1,4 +1,9 @@
-h1, p.info, p#info {
+h1, 
+p.info, 
+p#info,
+.buttonID,
+.buttonFree,
+.buttonPrice {
 	-webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
@@ -7,6 +12,7 @@ h1, p.info, p#info {
               user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */                                  
 }
+
 
 h1, input#id, input#free, input#startValue, input#endValue, p.info {
 	-webkit-animation-name: animate;

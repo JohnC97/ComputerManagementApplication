@@ -1,16 +1,29 @@
 
+.sp {
+	outline: none !important;
+}
 
-.buttonGet:HOVER, .buttonClear:HOVER,
-.buttonID:HOVER, .buttonFree:HOVER, .buttonPrice:HOVER {
+.buttonGet:HOVER, 
+.buttonClear:HOVER,
+.buttonID:HOVER, 
+.buttonFree:HOVER, 
+.buttonPrice:HOVER {
 	opacity: 0.7;
 }
 
-.buttonGet:ACTIVE, .buttonClear:ACTIVE, 
-.buttonID:ACTIVE, .buttonFree:ACTIVE, .buttonPrice:ACTIVE {
+.buttonGet:ACTIVE, 
+.buttonClear:ACTIVE, 
+.buttonID:ACTIVE, 
+.buttonFree:ACTIVE, 
+.buttonPrice:ACTIVE {
 	opacity: 0.5;
 }
 
-.buttonGet, .buttonClear, .buttonID, .buttonFree, .buttonPrice {
+.buttonGet,
+.buttonClear,
+.buttonID,
+.buttonFree,
+.buttonPrice {
 	border-radius: 35px;
 	border: none;
 	text-align: center;
@@ -69,15 +82,20 @@
 	background-color: #f4511e;
 }
 
-.buttonGet span, .buttonClear span, 
-.buttonID span, .buttonFree span, .buttonPrice span{
+.buttonGet span, 
+.buttonClear span, 
+.buttonID span, 
+.buttonFree span, 
+.buttonPrice span{
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
 	transition: 0.5s;
 }
 
-.buttonID span:AFTER, .buttonFree span:AFTER, .buttonPrice span:AFTER  {
+.buttonID span:AFTER, 
+.buttonFree span:AFTER, 
+.buttonPrice span:AFTER  {
 	content: '\00bb';
 	position: absolute;
 	opacity: 0;
@@ -86,12 +104,15 @@
 	transition: 0.5s;
 }
 
-.buttonID:hover span, .buttonFree:hover span, .buttonPrice:hover span {
+.buttonID:hover span, 
+.buttonFree:hover span, 
+.buttonPrice:hover span {
 	padding-right: 25px;
 }
 
 
-.buttonID:hover span:after, .buttonFree:hover span:after, 
+.buttonID:hover span:after, 
+.buttonFree:hover span:after, 
 .buttonPrice:hover span:after {
 	opacity: 1;
 	right: 0;

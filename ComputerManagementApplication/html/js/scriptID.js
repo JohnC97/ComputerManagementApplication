@@ -2,9 +2,16 @@
 $(document).ready(function() {
 	$("#driver").click(function(event) {
 		$('#divID').html('');
-		var id = document.getElementById("id").value;
+		var id = Number(document.getElementById("id").value);
 		changetext("Searching");
 		document.getElementById("id").value = "";
+		
+		//alert(typeof id);
+		
+//		if (typeof id != 'number') {
+//			alert("NOT A NUMBER");
+//		}
+		
 		if (!id == "") {
 			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/id/' + id, function(jd) {
 					$('#divID').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
@@ -20,9 +27,14 @@ $(document).ready(function() {
 					$('#divID').append('</div>');
 					$('#divID').append('</div>');
 					$('#divID').append('</table>');
-		     changetext("Result for ID: " + id);
+//		     changetext("Result for ID: " + id);
 		   })
-//			.complete(function() { alert("Done"); }); //Works
+		   .error(function(event, jqxhr, exception) {
+			   changetext("No Result for ID: " + id);
+		   })
+		   .success(function() {
+			   changetext("Result for ID: " + id);
+		   })
 			
 		} else {
 			changetext("NO ID GIVEN");

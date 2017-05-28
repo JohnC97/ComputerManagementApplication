@@ -9,14 +9,6 @@ $(document).ready(function() {
 		document.getElementById("endValue").value = "";
 		var i = 0;
 		
-//		if (startValue > endValue) {
-//			alert("startValue is greater than endValue:\nstartValue: " 
-//					+ startValue 
-//					+ "\nendValue: " + endValue);
-//			alert("startValue is a: " + typeof startValue
-//				+ "\n endValue is a: " + typeof endValue);
-//		}
-		
 		if (!startValue == "" && !endValue == "" && startValue >= 0 && endValue > startValue) {
 			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers?start=' + startValue + '&end=' + endValue, function(jd) {
 					jd.forEach(function (jd){
@@ -35,7 +27,7 @@ $(document).ready(function() {
 						$('#divID').append('</table>');
 						i++;
 					});
-		     changetext(i + " post found between " + startValue + ":- and " + endValue + ":-");
+		     changetext(i + " posts found between " + startValue + ":- and " + endValue + ":-");
 		   });
 			
 		} else if (startValue > endValue) {

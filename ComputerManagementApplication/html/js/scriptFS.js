@@ -26,7 +26,7 @@ $(document).ready(function() {
 						i++;
 						return null;
 					});
-		     changetext(i + " post found for search word(s): " + free);
+		     changetext(i + " posts found for search word(s): " + free);
 		   });
 			
 		} else {

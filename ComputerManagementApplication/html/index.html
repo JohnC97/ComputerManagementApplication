@@ -1,77 +1,39 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta charset="utf-8">
-    <title>Computers</title>
-    <style>
-      * { background-color: ivory; }
-      * { font-family: sans-serif; }
-    </style>
-    <script src="javascript.js" type="text/javascript"></script>
-</head>
-
-
-
-  <body id="body">
-  <input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />
-	  <button onclick="getAll()"><b>Get All Computer Data</b></button>
-	  <button onclick="save()"><b>Save</b></button>
-		<br>
-		
-		<div id="ComputerDivs">
-		<!-- ONLY TEST DIVS ______________________________________________________________________  -->
-		
-		      <div>  
-		    	<div style="clear: left;">
-		      		<p style="float: left;"><img border="1" src="https://www.komplett.se/img/p/200/898888.jpg"></p>
-				      <table>
-				      	<br><br>
-					    <tr><th style="float: right;">ID:</th><td>test id 1</td></tr>
-					    <tr><th style="float: right;">Name:</th><td>test name 1</td></tr>
-					    <tr><th style="float: right;">Type:</th><td>test type 1</td></tr>
-					  </table>
-		    	</div>
-		    </div>
-		    
-		    
-		    
-		    
-		   <div>  
-		    	<div style="clear: left;">
-		      		<p style="float: left;"><img border="1" src="https://www.komplett.se/img/p/200/898888.jpg"></p>
-				      <table>
-				      	<br><br>
-					    <tr><th style="float: right;">ID:</th><td>test id 2</td></tr>
-					    <tr><th style="float: right;">Name:</th><td>test name 2</td></tr>
-					    <tr><th style="float: right;">Type:</th><td>test type 2</td></tr>
-					  </table>
-		    	</div>
-		    </div>
-		
-		<!-- ONLY TEST DIVS ______________________________________________________________________  -->
-		</div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <p id="pText"> here goes the text </p>
-    <script type="text/javascript">
-    	function getAll() {
-    		console.log("getAll init..");
-			getAllData();
-    	}
-    </script>   
-  
-  
-
-  </body>
-</html>
+   <head>
+   <meta charset="utf-8">
+   <link href="css/style.css" rel="stylesheet">
+   <link href="css/buttons.css" rel="stylesheet">
+   <link href="css/h1style.css" rel="stylesheet">
+   <link href="css/divslide.css" rel="stylesheet">
+      
+	<title>Computers</title>
+      
+      <script 
+      	type="text/javascript" 
+      	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+      <script type="text/javascript" src="js/script.js"> </script>
+   </head>
+   
+   <body>
+      <h1>Computer Browser</h1>
+	  <br>
+	  <div align="center">
+	  
+	  <!-- BUTTONS -->
+	 	 <button class="buttonGet" type="button" id="driver"><span class="sp">Get All</span></Button>
+	  	  <a href="searchid.html" type="button" class="buttonID"><span>Search By ID</span></a>
+	  	  <a href="freesearch.html" type="button" class="buttonFree"><span>Free Search</span></a>
+	  	  <a href="pricesearch.html" type="button" class="buttonPrice"><span>Price Search</span></a>
+		<button class="buttonClear" type="button" id="clear"><span>Clear screen</span></button>
+	      
+	      <strong><p id="paragraph"></p></strong>
+	  </div>
+      
+      <br>
+      <div id="div"></div>
 	
+   </body>
+</html>
