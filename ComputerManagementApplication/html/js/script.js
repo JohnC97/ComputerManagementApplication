@@ -6,7 +6,6 @@ $(document).ready(function() {
 		$('#div').html('');
 		changetext("Loading JSON data from database..");
 		$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/', function(jd) {
-		// Should be able to get with id
 			jd.forEach(function (jd) {
 				$('#div').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 				$('#div').append('<table>');
@@ -20,13 +19,23 @@ $(document).ready(function() {
 				$('#div').append('<br><br>');
 				$('#div').append('</div>');
 				$('#div').append('<div id="spacediv">');
-				$('#div').append('<br><br><br><br><br><br><br><br>');
+				$('#div').append('<br><br>');
 				$('#div').append('</div>');
+				$('#div').append('</table>');
 				i++;
 	     });
-	     $('#div').append('</table>');
-	     changetext(i + " post found");
-	   });
+	     
+//	     changetext(i + " post found");
+	   })
+		.error(function(event, jqxhr, exception) {
+//			alert("Something went wrong ..");
+	    	 changetext("Something went wrong, please try again..");
+		})
+		.success(function() {
+//			alert("Successfully Loaded From Database");
+			changetext(i + " posts found and loaded successfully");
+//	    	 changetext("Result for ID: " + id);
+		})
 	});        
 	changetext();
 	

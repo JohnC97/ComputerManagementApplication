@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+   <meta charset="utf-8">
+   <link href="css/style.css" rel="stylesheet">
+   <link href="css/buttons.css" rel="stylesheet">
+   <link href="css/h1style.css" rel="stylesheet">
+   <link href="css/textfield.css" rel="stylesheet">
+      
+	<title>Price</title>
+      
+      <script
+      	type="text/javascript"
+      	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+      <script type="text/javascript" src="js/scriptPrice.js"> </script>
+   </head>
+   
+   <body>
+      <h1>pricerange search</h1>
+      <p class="info">enter your lowest and your highest price ex:"1000" "4000"</p>
+	  <div align="center">
+	  
+	  <!-- BUTTONS -->
+		<input class="buttonGet" id="backbutton" type="button" value="Go Back" onclick="history.back(-1)" />
+	  	<div class="priceDiv">
+		  <br>
+		 	 <button class="buttonGet" type="button" id="driver"><span>Search price</span></Button>
+		 	 <input type="text" id="startValue" placeholder="lowest price">
+		 	 <p class="info" style="display:inline;">«»</p>
+		 	 <input type="text" id="endValue" placeholder="highest price">
+		      
+	      </div>
+		      <strong>
+		      <p id="paragraph"></p>
+		      </strong>
+	  </div>
+      
+      <br>
+      <div id="divID"></div>
+
+   </body>
+</html>

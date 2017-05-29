@@ -1,4 +1,9 @@
-h1 {
+h1, 
+p.info, 
+p#info,
+.buttonID,
+.buttonFree,
+.buttonPrice {
 	-webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
@@ -8,7 +13,8 @@ h1 {
                                   supported by Chrome and Opera */                                  
 }
 
-h1, input#id, input#free {
+
+h1, input#id, input#free, input#startValue, input#endValue, p.info {
 	-webkit-animation-name: animate;
 	-webkit-animation-duration: 1.5s;
 	animation-name: animate;
@@ -35,7 +41,7 @@ h1, input#id, input#free {
 	}
 }
 
-input#id, input#free {
+input#id, input#free, input#startValue, input#endValue {
 	background-color: ivory;
 	color: #979797;
 	padding-left:1rem;
@@ -46,12 +52,23 @@ input#id, input#free {
 	border:solid 3px #BFBDBD;
 }
 
+input#endValue {
+	position: static;
+	left: 15rem;
+}
+
+
 input#free {
 	width: 13em;
 }
-p#info {
+p.info, p#info {
 	text-align: center;
 	text-transform: capitalize;
 	color: gray;
 }
+
+
+
+
+
 

@@ -2,13 +2,15 @@
 $(document).ready(function() {
 	$("#driver").click(function(event) {
 		$('#divID').html('');
-		var free = document.getElementById("free").value;
+		var startValue = new Number(document.getElementById("startValue").value);
+		var endValue = new Number(document.getElementById("endValue").value);
 		changetext("Searching");
-		document.getElementById("free").value = "";
+		document.getElementById("startValue").value = "";
+		document.getElementById("endValue").value = "";
 		var i = 0;
-		if (!free == "") {
-			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers/name/' + free, function(jd) {
-					changetext("success");
+		
+		if (!startValue == "" && !endValue == "" && startValue >= 0 && endValue > startValue) {
+			$.getJSON('http://localhost:8080/ComputerManagement/webservice/computers?start=' + startValue + '&end=' + endValue, function(jd) {
 					jd.forEach(function (jd){
 						$('#divID').append('<div class="divisionclass" id="division' + jd.id + '" style="clear: left;">');
 						$('#divID').append('<table>');
@@ -24,13 +26,12 @@ $(document).ready(function() {
 						$('#divID').append('</div>');
 						$('#divID').append('</table>');
 						i++;
-						return null;
 					});
-		     changetext(i + " posts found for search word(s): " + free);
+		     changetext(i + " posts found between " + startValue + ":- and " + endValue + ":-");
 		   });
 			
-		} else {
-			changetext("You must enter atleast one search word");
+		} else if (startValue > endValue) {
+			changetext("lowest value must be lower than highest");
 		}
 		
 	});
