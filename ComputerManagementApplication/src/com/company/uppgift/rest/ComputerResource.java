@@ -1,5 +1,6 @@
 package com.company.uppgift.rest;
 
+import java.net.URI;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -14,6 +15,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.ServiceUnavailableException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
@@ -117,7 +119,19 @@ public class ComputerResource {
 	@Produces("application/JSON")
 	@Consumes({"application/JSON", "application/XML"})
 	public Response createComputerPost(Computer computer) {
-		return null;
+		try{
+            service.registerComputer(computer);
+            URI uri = null;
+            
+            try{
+            uri = new URI("/computer/1");
+            }catch(Exception e){}
+            
+            return Response.created(uri).build();
+        }catch(ServiceUnavailableException e){
+            
+            return Response.status(503).build();
+        }
 	}
 	
 	
